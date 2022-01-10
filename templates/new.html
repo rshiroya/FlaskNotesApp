@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="UNCC Notes App">
+    <title>Notes App - New Note</title>
+    <!-- styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@300&display=swap:400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='note_edit_input.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+    <!--        <link rel="stylesheet" href="C:\Desktop_Folder\uncc_fall2020_work\NotesApplication\notes_app\static\note_edit_input.css">-->
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <img src="../static/logo.png" alt="note Logo" id="logo">
+        <nav class="site-nav">
+            <ul>
+                <li><a href = "/index"> Home</a></li>
+                <li><a href = "/notes"> My Notes</a></li>
+                <li><a href = "/notes/new"> Add Note</a></li>
+                <li><a href="/todo">ToDo Tasks</a></li>
+        {% if user %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+                <li><a href="{{ url_for('login') }}">Sign In</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+            {% endif %}
+        </nav>
+    </div>
+</header>
+
+<div class="container-edit">
+    <div class="edit-box">
+        <h1>Add/Edit Note Details</h1>
+    </div>
+</div>
+
+<div class="container-input">
+{% if note %}
+<form action ="{{url_for('update_note', note_id=note.id)}}" method="post">
+    <div class="titlediv">
+        <p class="info"><label>Title:</label></p>
+        <p><input class="inputhere" type="text" name="TitleEdit" value="{{note.title}}"/></p>
+        <!--                    <div class="errors">-->
+        <!--                        <p>Do not include any special characters in note title.</p>-->
+        <!--                    </div>-->
+
+        {% for error in form.TitleEdit.errors %}
+        <p class="errors">**The title of the note cannot contain any special characters.**</p>
+        {% endfor %}
+
+    </div>
+
+    <div class="contentdiv">
+        <p class="info"><label>Note Content:</label></p>
+        <textarea class="textin" name="NoteEdit"  rows="10">
+                                {{note.text}}
+                        </textarea>
+        <!--                    <div class="errors">-->
+        <!--                        <p>The length of note content should be less than 1000 words.</p>-->
+        <!--                    </div>-->
+
+        {% for error in form.NoteEdit.errors %}
+        <p class="errors">**The note content should not be longer than 1000 words.**</p>
+        {% endfor %}
+
+    </div>
+
+    <div class="submit-button">
+        <input class="submitbutton" type="submit" value="Update Note"/>
+    </div>
+</form>
+
+{% else %}
+<form action="new" method="post">
+
+    <div class="titlediv">
+        <p class="info"><label>Title:</label></p>
+        <p><input class="inputhere" type="text" name="Titleadd"/></p>
+        <!--                    <div class="errors">-->
+        <!--                        <p>Do not include any special characters in note title.</p>-->
+        <!--                    </div>-->
+        {% for error in form.Titleadd.errors %}
+        <p class="errors">**The title of the note cannot contain any special characters.**</p>
+        {% endfor %}
+
+    </div>
+
+    <div class="contentdiv">
+        <p class="info"><label>Note Content:</label></p>
+        <textarea class="textin" name="Noteadd"  rows="10" placeholder="Add your new note here..."></textarea>
+        <!--                    <div class="errors">-->
+        <!--                        <p>The length of note content should be less than 1000 words.</p>-->
+        <!--                    </div>-->
+
+        {% for error in form.Noteadd.errors %}
+        <p class="errors">**The note content should not be longer than 1000 words.**</p>
+        {% endfor %}
+
+    </div>
+
+    <div class="submit-button">
+        <input class="submitbutton" type="submit" value="Add Note"/>
+    </div>
+
+</form>
+{% endif %}
+</div>
+
+</body>
+</html>

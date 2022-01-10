@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Notes App">
+        <title>ToDO List</title>
+        <link href="{{ url_for('static', filename='todo.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@300&display=swap:400" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <header>
+        <div class="container">
+            <img src="../static/logo.png" alt="note Logo" id="logo">
+            <nav class="site-nav">
+                <ul>
+                    <li><a href = "/index"> Home</a></li>
+                    <li><a href = "/notes"> My Notes</a></li>
+                    <li><a href = "/notes/new"> Add Note</a></li>
+                    <li><a href="/todo">ToDo Tasks</a></li>
+                    {% if user %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Sign In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+    <div class="container-todo">
+        <div class="todo-box">
+            <h1>ToDo Tasks</h1>
+        </div>
+    </div>
+    <div class="add-new">
+        <form action="{{ url_for('add')}}" method="POST">
+            <input type="text" name="todoitem">
+            <input class="add-task" type="submit" value="Add Task">
+        </form>
+    </div>
+    <div class="items">
+		<h2>Incomplete items:</h2>
+        <div class="incomplete">
+        <ul>
+			{% for todo in incomplete %}
+            <li>{{ todo.text }}<a href="{{ url_for('complete', id=todo.id) }}"><span>       </span>Mark as Complete</a></li>
+			{% endfor %}
+        </ul>
+        </div>
+        <h2>Completed Items:</h2>
+        <div class="complete">
+        <ul>
+        	{% for todo in complete %}
+        	<li>{{ todo.text }}</li>
+        	{% endfor %}
+        </ul>
+        </div>
+    </div>
+</body>
+</html>

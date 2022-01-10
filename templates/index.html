@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="UNCC Notes App">
+        <title>UNCC Notes App</title>
+        <!-- styles -->
+		<link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@300&display=swap:400" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+
+	<header>
+		<div class="container">
+			<img src="../static/logo.png" alt="note Logo" id="logo">
+			<nav class="site-nav">
+				<ul>
+					<li><a href = "/index"> Home</a></li>
+					<li><a href = "/notes"> My Notes</a></li>
+					<li><a href = "/notes/new"> Add Note</a></li>
+					<li><a href="/todo">ToDo Tasks</a></li>
+					{% if user %}
+					<li><a href="{{ url_for('logout') }}">Logout</a></li>
+					{% else %}
+					<li><a href="{{ url_for('login') }}">Sign In</a></li>
+					<li><a href="{{ url_for('register') }}">Register</a></li>
+				</ul>
+				{% endif %}
+			</nav>
+		</div>
+	</header>
+
+
+	<div class="container-box">
+		<div class="biography-box">
+        <h1>Welcome {{user}} to the Note App!</h1>
+		</div>
+	</div>
+
+        <h2>Create, Edit, and add To Do Tasks.</h2>
+
+	<div class="container-logo">
+	<img src="../static/logo.png" alt="note Logo" id="logo2">
+	</div>
+
+	<footer>@ByteOptimizers</footer>
+    </body>
+</html>

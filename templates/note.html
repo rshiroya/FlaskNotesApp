@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="UNCC Notes App">
+        <title>UNCC Notes App - View your Note</title>
+        <!-- styles -->
+        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@300&display=swap:400" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
+    </head>
+    <body>
+    <header>
+        <div class="container">
+            <img src="../static/logo.png" alt="note Logo" id="logo">
+            <nav class="site-nav">
+                <ul>
+                    <li><a href = "/index"> Home</a></li>
+                    <li><a href = "/notes"> My Notes</a></li>
+                    <li><a href = "/notes/new"> Add Note</a></li>
+                    <li><a href="/todo">ToDo Tasks</a></li>
+                    {% if user %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Sign In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+    <div class="container-edit">
+        <div class="edit-box">
+            <h1>Note Details</h1>
+        </div>
+    </div>
+
+    <div class="note-container">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Date</th>
+                <th>Words</th>
+            </tr>
+            <tr>
+                <td>{{ note.title }}</td>
+                <td>{{ note.text }}</td>
+                <td>{{ note.date }}</td>
+                <td>{{ note_count }}</td>
+            </tr>
+        </table>
+    </div>
+
+{% if note.comments %}
+  	{% if note.comments|length > 0 %}
+    	<h2>Comments</h2>
+        <div class="comments">
+   		<ul>
+    	{% for comment in note.comments %}
+      		<li>{{ comment.content }}</li>
+    	{% endfor %}
+    	</ul>
+        </div>
+  	{% endif %}
+ {% endif %}
+<div class="adding-comment">
+    <form action="{{ url_for('new_comment', note_id=note.id) }}" method="post">
+	<div class="formwrapper">
+    	<h2 class="title">Add a comment</h2>
+    		<div class="form-field">
+      			{{ form.comment.label }} <br/> {{ form.comment }}
+    		</div>
+    	{{ form.submit }}
+  	</div>
+</form>
+</div>
+    </body>
+</html>
