@@ -1,0 +1,215 @@
+
+h2{
+    color:black;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Encode Sans Semi Expanded',
+    sans-serif;
+    padding-top: 15px;
+}
+
+body {
+    margin: 0;
+    background: white;
+    font-family: 'Encode Sans Semi Expanded',
+    sans-serif; font-weight: 500;
+    padding-top: 60px;
+}
+
+@media (max-width: 980px) {
+    body {
+        padding-top: 0;
+    }
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+}
+
+header::after {
+    content:'';
+    display: table;
+    clear: both;
+}
+
+.site-nav {
+    width: auto;
+    margin: 0 auto;
+    letter-spacing: 1px;
+}
+.site-nav ul {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.site-nav li {
+    display: inline-block;
+    margin-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.site-nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Encode Sans Semi Expanded',
+    sans-serif; font-weight: 1000;
+}
+
+.site-nav a:hover {
+    color: #01caff;
+}
+
+.site-nav a:hover::after{
+    width: 100%;
+}
+
+.site-nav a::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 0;
+    background-color: #01caff;
+    bottom: 0;
+    position: absolute;
+    transition: all ease-in 200ms;
+}
+
+#logo {
+    float: left;
+    margin-left: -2%;
+    height: 80px;
+    width: 200px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container-box {
+    width: 95%;
+    max-width: 70em;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 3.5em;
+}
+
+h1 {
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
+    font-weight: 350;
+    font-size: 40px;
+    margin-top: 0;
+    padding-top: 15px;
+}
+
+.biography-box{
+    padding: 4em;
+    outline: 3px solid #14202c;
+    outline-offset: -1.5em;
+    color: #14202c;
+    background-color: #01caff;
+}
+
+.container-logo {
+    width: 95%;
+    max-width: 70em;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#logo2 {
+    height: 150px;
+    width: 350px;
+}
+
+footer {
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+.container-notes {
+    width: 50%;
+    max-width: 30em;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 2.5em;
+    padding-bottom: 1.5em;
+}
+
+.notes-box{
+    padding: 1em;
+    outline: 3px solid #00b2ff;
+    outline-offset: -1.5em;
+    color: black;
+}
+
+.container-edit {
+    width: 50%;
+    max-width: 45em;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 2.5em;
+}
+
+.edit-box{
+    padding: 1em;
+    outline: 3px solid #00b2ff;
+    outline-offset: -1.5em;
+    color: black;
+}
+
+.note-container{
+    padding-left: 470px;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    text-align: center;
+}
+
+.comments ul li{
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+}
+
+.adding-comment{
+    padding-left: 470px;
+    padding-top: 1.5em;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.adding-comment h1{
+    color:#01caff;
+}
+.adding-comment h2{
+    color:black;
+    background:#01caff;
+}
+
+.register{
+    padding-top: 2.5em;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.login{
+    padding-top: 2.5em;
+    width: 300px;
+    margin: 0 auto;
+}

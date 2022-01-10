@@ -1,0 +1,148 @@
+table.table-container{
+	border-collapse: collapse;
+}
+
+
+.table-container
+{
+	width: 750px;
+	margin: 0 auto;
+}
+
+table
+{
+	margin: 0;
+}
+
+thead
+{
+	background-color: #01caff;
+}
+
+table.table-container td,
+table.table-container th {
+	border-bottom: 1px solid black;
+	padding: 10px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+td.actions{
+	width: 100px
+}
+
+.button {
+	background-color: #01caff;
+	border: 1px solid black;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 8px;
+}
+
+.button a{
+	text-decoration: none;
+}
+
+.button:hover {
+	background-color: darkgrey;
+	color: white;
+}
+
+.button-container{
+	padding-top: 20px;
+	width: 750px;
+	margin: 0 auto;
+	text-align: right;
+}
+/*p.c {
+	position: absolute;
+	right: 20px;
+	top: 4px;
+}
+p.b {
+	position: absolute;
+	right: 160px;
+	top: 4px;
+}
+p.a{
+	text-align: left;
+	position: absolute;
+	left: 20px;
+	top: 4px;
+}
+/*p.d {
+	position: absolute;
+	right: 20px;
+	top: 4px;
+}
+p.c {
+	position: absolute;
+	right: 100px;
+	top: 4px;
+}
+p.b {
+	position: absolute;
+	right: 250px;
+	top: 4px;
+}
+p.a{
+	text-align: left;
+	position: absolute;
+	left: 20px;
+	top: 4px;
+}*/
+/*div.title{
+	margin-top: 70px;
+}
+div.title p.aa{
+	color: blue;
+	font-size: 45px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+div.title p{
+	display: inline;
+}
+a.create{
+	float: right;
+	background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	
+}
+table{
+	width: 85%;
+	text-align: center;
+}
+th, td {
+	border-bottom: 1px solid #616A6B;
+	border-top: 1px solid #616A6B;
+	padding: 15px;
+}
+th.titlecolumn{
+	width: 350px;
+	font-size: 20px;
+}
+td.namecolumn{
+	width: 350px
+}
+th.datecolumn{
+	width: 200px;
+	font-size: 20px;
+}
+td.columndate {
+	width: 200px
+}
+td.others{
+	width: 100px
+}

@@ -1,0 +1,28 @@
+
+.button {
+    background-color: #01caff;
+    border: 1px solid black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.button a{
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: darkgrey;
+    color: white;
+}
+
+.button-container{
+    padding-top: 20px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: right;
+}

@@ -1,0 +1,110 @@
+body{
+	background-color: #F2F3F4;
+}
+div.header{
+	background-color: black;
+	padding: 25px 25px 25px 25px;
+	color: white;
+	position: fixed;
+    top: 0;
+	right: 0;
+	left: 0;
+}	
+div.header p {
+	display: inline;
+	color: white;
+}
+div.header a {
+	color: white;
+}
+p.d {
+	position: absolute;
+	right: 20px;
+	top: 4px;
+}
+p.c {
+	position: absolute;
+	right: 100px;
+	top: 4px;
+}
+p.b {
+	position: absolute;
+	right: 250px;
+	top: 4px;
+}
+p.a{
+	text-align: left;
+	position: absolute;
+	left: 20px;
+	top: 4px;
+}
+
+.container-input{
+	text-align: center;
+}
+
+/*p.c {
+	position: absolute;
+	right: 20px;
+	top: 4px;
+}
+p.b {
+	position: absolute;
+	right: 160px;
+	top: 4px;
+}
+p.a{
+	text-align: left;
+	position: absolute;
+	left: 20px;
+	top: 4px;
+}*/
+div.mainheader{
+	margin-top: 90px;
+	color: blue;
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 0;
+	margin-left: 15px;
+}
+p.info{
+	font-weight: 900;
+	font-size: 20px;
+	font-family: 'Encode Sans Semi Expanded', sans-serif;
+}
+
+input.inputhere{
+	width: 35%;
+	margin-left: 15px;
+    padding: 7px;
+}
+input.submitbutton{
+	float: right;
+	background-color: #01caff;
+	border: 1px solid black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	margin-top: 30px;
+	margin-left: 15px;
+	border-radius: 8px;
+}
+
+.submit-button{
+	padding-right: 400px;
+}
+
+textarea.textin{
+	margin-left: 15px;
+	width: 35%;
+	padding: 7px;
+}
+p.errors{
+	color: #A4270C;
+	margin-left: 35px;
+    font-size: 15px;
+    font-weight: bold;
+}
